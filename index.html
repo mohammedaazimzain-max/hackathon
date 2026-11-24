@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Web-Wide Commercial Choice & Action Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-badge">AI</div>
+      <div>
+        <h1>CommerceScout AI</h1>
+        <p class="subtitle">Autonomous Web-Wide Commercial Choice & Email Action Engine</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <span class="status-pill"><span class="dot"></span> Web Crawlers Ready</span>
+      <button id="openEmailHubBtn" class="btn btn-secondary">
+        Email Automation Hub <span id="logCountBadge" class="badge">2</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Control & Intent Panel -->
+    <section class="card control-panel">
+      <div class="panel-header">
+        <h2>1. Customer Intent & Multi-Criteria AI Weights</h2>
+        <div class="presets">
+          <button class="preset-btn active" data-preset="laptop">Ultrabook for Dev</button>
+          <button class="preset-btn" data-preset="office">Ergonomic Office Setup</button>
+          <button class="preset-btn" data-preset="espresso">Commercial Espresso Machine</button>
+        </div>
+      </div>
+
+      <div class="intent-row">
+        <input
+          type="text"
+          id="intentInput"
+          value="Lightweight developer laptop, 32GB RAM, long battery life, under $1,800"
+          placeholder="Describe what you want the AI to source across the web..."
+        />
+        <button id="scanBtn" class="btn btn-primary">Scan Web & Evaluate Choices</button>
+      </div>
+
+      <div class="sliders-grid">
+        <div class="slider-item">
+          <div class="slider-label">
+            <span>Landed Price Weight</span>
+            <strong id="priceWeightVal">35%</strong>
+          </div>
+          <input type="range" id="priceWeight" min="0" max="100" value="35" />
+        </div>
+        <div class="slider-item">
+          <div class="slider-label">
+            <span>Quality & Reviews</span>
+            <strong id="qualityWeightVal">35%</strong>
+          </div>
+          <input type="range" id="qualityWeight" min="0" max="100" value="35" />
+        </div>
+        <div class="slider-item">
+          <div class="slider-label">
+            <span>Delivery Speed</span>
+            <strong id="speedWeightVal">20%</strong>
+          </div>
+          <input type="range" id="speedWeight" min="0" max="100" value="20" />
+        </div>
+        <div class="slider-item">
+          <div class="slider-label">
+            <span>Sustainability & Warranty</span>
+            <strong id="sustainWeightVal">10%</strong>
+          </div>
+          <input type="range" id="sustainWeight" min="0" max="100" value="10" />
+        </div>
+      </div>
+
+      <!-- Pipeline Progress -->
+      <div id="pipelineBox" class="pipeline-box hidden">
+        <div class="pipeline-steps">
+          <div class="step" id="step1">1. Discovery & Scraping (142 Sources)</div>
+          <div class="step" id="step2">2. Normalization & Fraud Filter</div>
+          <div class="step" id="step3">3. Multi-Criteria AI Ranking</div>
+        </div>
+        <div class="progress-track">
+          <div id="progressBar" class="progress-fill"></div>
+        </div>
+        <p id="pipelineStatus" class="pipeline-status">Initializing autonomous agents...</p>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+      <div class="section-header">
+        <h2>2. Favourable Commercial Choices (Ranked by AI Match)</h2>
+        <span id="resultsMeta" class="muted">Showing top 4 verified commercial offers across 18 global retailers</span>
+      </div>
+      <div id="choicesGrid" class="choices-grid"></div>
+    </section>
+  </main>
+
+  <!-- Email Automation Modal / Drawer -->
+  <div id="emailModal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3>Autonomous Email & Alert Workflows</h3>
+          <p class="muted">AI-generated digests, B2B vendor quote requests, and live price-drop triggers</p>
+        </div>
+        <button id="closeEmailModalBtn" class="icon-btn" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="digest">Customer Choice Digest</button>
+        <button class="tab-btn" data-tab="vendor">B2B Vendor Quote Inquiry</button>
+        <button class="tab-btn" data-tab="alert">Dynamic Price-Drop Alert</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-grid">
+          <label>
+            Recipient Email
+            <input type="email" id="recipientEmail" value="customer@example.com" />
+          </label>
+          <label>
+            Selected Product Context
+            <select id="selectedProductSelect"></select>
+          </label>
+        </div>
+
+        <label class="block-label">
+          Email Subject
+          <input type="text" id="emailSubject" />
+        </label>
+
+        <label class="block-label">
+          AI-Drafted Email Body
+          <textarea id="emailBody" rows="8"></textarea>
+        </label>
+
+        <div class="modal-actions">
+          <button id="sendEmailBtn" class="btn btn-primary">Dispatch Automated Email</button>
+        </div>
+
+        <div class="audit-log">
+          <h4>Automation Audit Log</h4>
+          <ul id="auditLogList"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<p> The data present over here isn't authentic. For reference only!<br>
+Authentic data shall be appended later to the webpage.</p>
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
